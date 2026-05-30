@@ -1,47 +1,60 @@
 # php-excel-file-updater
 
-**PHP script that reads a CSV/Excel file, updates specific columns, and exports a clean, modified version automatically**.
-
----
+![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge\&logo=php\&logoColor=white)
 
 ## Description
 
-`php-excel-file-updater` is a simple server-side PHP utility designed to automate the bulk editing of CSV and Excel files. It opens an existing file, iterates through each row, applies custom transformations to targeted columns (such as reformatting dates or overwriting values), and saves the result as a new output file — all without any manual intervention. Ideal for data cleanup, batch processing, or quick file migrations.
+A lightweight PHP utility for reading a CSV file, updating specific columns, and automatically generating a corrected output file. This project is designed for developers and administrators who need to perform bulk CSV processing without complex setup or dependencies.
 
----
+## Features
 
-## Tech Stack
+* Read an existing CSV file (`file_example.csv`)
+* Iterate through rows and update targeted columns
+* Generate a new output file (`file_example_fixed.csv`)
+* Includes sample files for quick testing
 
-![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
+## Technologies Used
 
----
+![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge\&logo=php\&logoColor=white)
 
 ## Installation
 
-Clone the repository and place it in your PHP-enabled server directory:
+1. Copy the project into a directory accessible by your PHP server.
+2. Ensure PHP is installed and properly configured on your machine.
+3. Place the source CSV file in the project directory as `file_example.csv`, or update the file path in `index.php`.
 
 ```bash
-git clone https://github.com/Cyrus2401/php-excel-file-updater.git
-cd php-excel-file-updater
+cd /var/www/html/php-excel-file-updater
 ```
-
----
 
 ## Usage
 
-1. Place your source CSV file in the project root and name it `file_example.csv`
-2. Open `index.php` and edit the transformation logic to match your needs:
+1. Open `index.php`.
+2. Customize the transformation logic as needed, for example:
 
 ```php
-$data[7] = "Your custom value"; // Targets the 7th column (0-indexed)
+$data[7] = "Written by Cyrus"; // Updates the 8th column (index 7)
 ```
 
-3. Run the script via your local server:
+3. Access the script through your web server:
 
-```
+```text
 http://localhost/php-excel-file-updater/index.php
 ```
 
-4. The modified file will be generated as `file_example_fixed.csv` in the project root.
+4. The processed file will be generated as:
 
----
+```text
+file_example_fixed.csv
+```
+
+## Project Structure
+
+* `index.php` — Main CSV processing script
+* `file_example.csv` — Sample source file
+* `file_example_fixed.csv` — Generated output file
+* `file_example.xls` — Additional sample spreadsheet included in the project
+
+## License
+
+This project is licensed under the MIT License.
